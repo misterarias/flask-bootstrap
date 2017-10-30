@@ -1,0 +1,4 @@
+#/bin/sh
+topdir=$(cd "$(dirname "$0")/.." ; pwd)
+app=flask-app
+docker build -t "${app}" "${topdir}/image/"

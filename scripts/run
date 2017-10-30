@@ -1,0 +1,4 @@
+#/bin/sh
+topdir=$(cd "$(dirname "$0")/.." ; pwd)
+app=flask-app
+docker run --rm -v "${topdir}/server:/opt/flask" -p 8080:80 -ti ${app}

@@ -1,0 +1,7 @@
+#/bin/sh
+
+# Should return a 200 OK with a JSON response
+curl  localhost:8080/api/v1/register
+
+# Should return a 404 Error with a custom message
+curl  localhost:8080/api/v1/i_dont_exist

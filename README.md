@@ -19,6 +19,8 @@ app=flask-app
 docker build -t "${app}" image/
 ```
 
+Or run `./scripts/build`
+
 ### Run
 
 This will launch the sample app in port 8080
@@ -26,8 +28,10 @@ This will launch the sample app in port 8080
 ```
 app=flask-app
 
-docker --rm -v $(pwd)/server:/opt/flask -p 8080:80 -ti ${app}
+docker run --rm -v $(pwd)/server:/opt/flask -p 8080:80 -ti ${app}
 ```
+
+Or run `./scripts/run`
 
 ### Verify?
 
@@ -42,6 +46,8 @@ curl  localhost:8080/api/v1/register
 curl  localhost:8080/api/v1/i_dont_exist
 ```
 
+Or run `./scripts/verify` with the app running
+
 ### Stop
 
 ```
@@ -49,3 +55,5 @@ app=flask-app
 
 docker stop $(docker ps -q  --filter=ancestor=${app})
 ```
+
+Or run `./scripts/stop`
