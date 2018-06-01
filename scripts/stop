@@ -1,3 +1,3 @@
 #/bin/sh
-app=flask-app
+app=${1:-mock-server}
 docker stop $(docker ps -q  --filter=ancestor=${app})
